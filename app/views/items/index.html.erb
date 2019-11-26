@@ -95,34 +95,32 @@
         <!-- Header Area End -->
 
 
-
-
-
-
         <!-- Product Catagories Area Start -->
         <div class="products-catagories-area clearfix">
             <div class="amado-pro-catagory clearfix">
 
-                <% @items.each do |item|  %>
+				<div class="row">
+				<% @items.each_with_index do |item, i| %>
                 <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <%= link_to image_tag('/assets/1.jpg'), item_path(item) %>
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p><%= item.price  %> €</p>
-                            <h4> <%= item.title %> </h4>
-                        </div>
-                    </a>
-                </div>
+	                <div class="single-products-catagory clearfix", style='height:250pt;'>
+	                    <a href="shop.html">
+	                    	<span class="grayscale">
+	                        	<img src="/assets/<%= i+1 %>.jpg" alt="">
+	                    	</span>
+	                        <!-- Hover Content -->
+	                        <div class="hover-content">
+	                            <div class="line"></div>
+	                            <p>From $<%= item.price %>180</p>
+	                            <h4><%= item.title %></h4>
+	                        </div>
+	                    </a>
+	                </div>
+	            <% end %>
 
-              
+            	</div>
+            </div>
+        </div>
         <!-- Product Catagories Area End -->
-
-
-
-
-        <% end %>
 
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
@@ -151,7 +149,7 @@
         </div>
     </section>
     <!-- ##### Newsletter Area End ##### -->
-
+	
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
         <div class="container">
