@@ -1,10 +1,16 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <br><br><br>
+<div class="body-blue">
+<body>
+  <div class="container">
+  <div class="checkout_details_area">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-4">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2 class= h3-mb-0>Please Sign Up</h2>
+              <p> Fill out the form to get started</p>
+            </div>
       <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin mt-3" } do |f| %>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1>
         <%= devise_error_messages! %>
         <div class="form-group">
           <%= f.label :email, "Email" %><br />
@@ -21,11 +27,23 @@
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
-        <div class="actions mt-3">
-          <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+        <div class="actions mt-5">
+          <%= f.submit "Sign up", class:"btn amado-btn w-100" %>
         </div>
+         <br>
+         <div class= "text-center">
+              <p>Have an account?
+                <%= render "devise/shared/links" %>
+               </p>
+         </div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      
     </div>
   </div>
+</div>
+</div>
+</div>
+        </div>
+  
+</body>
 </div>
