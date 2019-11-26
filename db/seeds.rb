@@ -9,10 +9,10 @@
 require 'faker'
 require 'table_print'
 Item.destroy_all
-
-5.times do
-	Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.breed, price: Faker::Number.decimal(l_digits: 2), image_url: Faker::String.random)
+9.times do
+Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.breed, price: Faker::Number.decimal(l_digits: 2), image_url: "<img src='i+1.png' alt''/>")
 end
+tp Item.all
 
 
 5.times do
@@ -20,3 +20,4 @@ end
 end
 
 tp Item.all
+
