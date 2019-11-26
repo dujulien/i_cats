@@ -16,7 +16,7 @@ end
 
 
 5.times do
-	User.create(name: Faker::Name.first_name, email: )
+#	User.create(name: Faker::Name.first_name, email: )
 end
 
 tp Item.all
