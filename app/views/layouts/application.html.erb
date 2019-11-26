@@ -59,23 +59,27 @@
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="product-details.html">Product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <% if current_user %>
+                        <li><a href="<%= cart_path(current_user.id) %>">Cart</a></li>
+                    <% else %>
+                        <li><a href="#">Cart</a></li>
+                    <% end %>
                     <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
-            <div class="amado-btn-group mt-30 mb-100">
-                <a href="#" class="btn amado-btn mb-15">%Discount%</a>
-                <a href="#" class="btn amado-btn active">New this week</a>
-            </div>
+            <% if !current_user %>
+                <div class="amado-btn-group mt-30 mb-100">
+                    <a href="<%= new_user_session_path %>" class="btn amado-btn mb-15">Sign In</a>
+                    <a href="<%= new_user_registration_path %>" class="btn amado-btn active">Sign Up</a>
+                </div>
+            <% else %>
+                <div class="amado-btn-group mt-30 mb-100">
+                    <%= link_to "Sign out", destroy_user_session_path, class: "btn amado-btn active", :method => :delete %>
+                </div>
+            <% end %>
             <!-- Cart Menu -->
-            <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="/assets/cart.png" alt="">Cart <span>(0)</span></a>
-                <a href="#" class="fav-nav"><img src="/assets/favorites.png" alt=""> Favourite</a>
-                <a href="#" class="search-nav"><img src="/assets/search.png" alt=""> Search</a>
-            </div>
+
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
                 <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>

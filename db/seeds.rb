@@ -16,8 +16,17 @@ tp Item.all
 
 
 5.times do
-#	User.create(name: Faker::Name.first_name, email: )
+	User.create(name: Faker::Name.first_name, email: Faker::Internet.email, password: "AZERTY" )
 end
 
-tp Item.all
+5.times do |i|
+	Cart.create(user: User.find(i+1))
+end
+
+5.times do |i|
+	5.times do |j|
+		CartContent.create(cart: Cart.find(i+1), item: Item.find(rand(1..9)))
+	end
+end
+
 

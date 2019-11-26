@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 	after_create :welcome_send
-
+	has_one :cart
+	
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
