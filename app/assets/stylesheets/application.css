@@ -14,9 +14,13 @@
  *=require style
  *=require animate
  *=require style
- *=require font-awesome.min
- *=require jquery-ui.min
+ *=require font-awesome
+ *=require jquery-ui
  *=require magnific-popup
  *=require nice-select
  *=require owl.carousel
+ *=require pic
  */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
