@@ -10,6 +10,14 @@ require 'faker'
 require 'table_print'
 Item.destroy_all
 9.times do
-Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.breed, price: Faker::Number.decimal(l_digits: 2), image_url: "<img src="i+1.png" alt""/>)
+Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.breed, price: Faker::Number.decimal(l_digits: 2), image_url: "<img src='i+1.png' alt''/>")
 end
 tp Item.all
+
+
+5.times do
+#	User.create(name: Faker::Name.first_name, email: )
+end
+
+tp Item.all
+
